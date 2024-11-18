@@ -47,3 +47,4 @@ public class Calculator {
 
 /*처음에 클래스 생성자를 통해서 연결시키려고 했더니 Getter과 Setter를 사용하여 연결하란다.
 * 생성자를 통한 연결이 간접적이지 않아서 그런가 했는데, 그건 또 아닌 모양이네.*/
+/* Queue나 Stack 같은 걸 넘길때는 Queue<Integer>같은 식으로 넘긴다.*/
