@@ -22,6 +22,9 @@ public class Main {
             } else if (operator == '*') {
                 result = Num1 * Num2;
             } else if (operator == '/') {
+                if (Num2 == 0) {
+                    continue;
+                }
                 result = Num1 / Num2;
             }
             System.out.println(result);
