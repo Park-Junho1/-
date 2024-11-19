@@ -5,7 +5,6 @@ import java.util.*;
 public class App {
     public static void main(String[] args) throws IOException {
         Calculator calculator = new Calculator();
-        Queue<Integer> arr = new LinkedList<>();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         while(true) {
             StringTokenizer st = new StringTokenizer(br.readLine(), " ");
@@ -13,8 +12,17 @@ public class App {
             if (s.startsWith("e")) {
                 break;
             } else if (s.startsWith("p")) {
-                calculator.removeResult(arr);
+                calculator.removeResult();
                 continue;
+            } else if (s.startsWith("i")) {
+                int k = Integer.parseInt(st.nextToken());
+                int index_value = calculator.ListRetrieve(k);
+                System.out.println(index_value);
+                continue;
+            } else if (s.startsWith("c")) {
+                int k = Integer.parseInt(st.nextToken());
+                int value = Integer.parseInt(st.nextToken());
+                calculator.ListModify(k, value);
             }
             int Num1 = Integer.parseInt(s);
             char Operator = st.nextToken().charAt(0);
@@ -25,7 +33,6 @@ public class App {
             calculator.SetOperator(Operator);
 
             int result = calculator.calculate();
-            arr.add(result);
             System.out.println(result);
         }
         br.close();
