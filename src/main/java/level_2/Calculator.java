@@ -5,7 +5,6 @@ public class Calculator {
     private int Num1;
     private int Num2;
     private char Operator;
-    private int result;
     private Queue<Integer> arr = new LinkedList<>();
 
     public int GetNum1() {
@@ -33,6 +32,7 @@ public class Calculator {
     }
 
     public int calculate () {
+        int result;
         switch (Operator) {
             case '+' : result = Num1 + Num2; break;
             case '-' : result = Num1 - Num2; break;
