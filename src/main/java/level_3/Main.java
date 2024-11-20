@@ -21,7 +21,7 @@ public class Main {
                 try {
                     double index_value = calculator.ListRetrieve(k);
                     System.out.println(index_value);
-                } catch (IndexOutOfBoundsException e) {
+                } catch (IndexOutOfBoundsException e) { //calculator.ListRetrieve에서 인덱스가 지정된 범위를 벗어났을 경우.
                     System.err.println(e.getMessage());
                 }
                 continue;
@@ -30,7 +30,7 @@ public class Main {
                 try {
                     double value = Double.parseDouble(st.nextToken());
                     calculator.ListModify(k, value);
-                } catch (IndexOutOfBoundsException e) {
+                } catch (IndexOutOfBoundsException e) { //calculator.ListModify에서 인덱스가 지정된 범위를 벗어났을 경우.
                     System.err.println(e.getMessage());
                 }
             }
@@ -42,10 +42,10 @@ public class Main {
                 calculator.SetNum1(Num1);
                 calculator.SetNum2(Num2);
                 OperatorType operator = OperatorType.fromSymbol(Symbol);
-                calculator.setOperator(operator);
+                calculator.setOperator(operator); //Calculator클래스에게 연산자를 전달해주는 역할
                 Double result = calculator.calculate();
                 BigDecimal BigResult = BigDecimal.valueOf(result);
-                BigDecimal ModifyResult = BigResult.setScale(5, RoundingMode.HALF_UP);
+                BigDecimal ModifyResult = BigResult.setScale(5, RoundingMode.HALF_UP); // 소수점 스케일을 5로하여 그 이하는 반올림하는 방식.
                 System.out.println(ModifyResult);
             } catch (Exception e) {
                 System.err.println(e.getMessage());
