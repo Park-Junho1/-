@@ -31,6 +31,7 @@ public class Calculator <T extends Number> { //지시에 따른 제너릭 T타�
         }
         Double result = operator.calculate(Num1.doubleValue(), Num2.doubleValue()); //doubleValue값으로 enum클래스에게 값 전달.
         arr.add((T) result);
+        history.add((T) result);
         return (T) result; //반환 타입이 T타입이므로 타입에 맞춰 캐스팅.
     }
 
